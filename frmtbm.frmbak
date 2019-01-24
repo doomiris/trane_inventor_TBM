@@ -1,0 +1,1043 @@
+VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{0D452EE1-E08F-101A-852E-02608C4D0BB4}#2.0#0"; "FM20.DLL"
+Begin VB.Form frmtbm 
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "TBM"
+   ClientHeight    =   4920
+   ClientLeft      =   45
+   ClientTop       =   435
+   ClientWidth     =   9060
+   BeginProperty Font 
+      Name            =   "Arial"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   Icon            =   "frmtbm.frx":0000
+   LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   4920
+   ScaleWidth      =   9060
+   ShowInTaskbar   =   0   'False
+   StartUpPosition =   1  '所有者中心
+   Begin MSComctlLib.StatusBar sb 
+      Height          =   300
+      Left            =   240
+      TabIndex        =   33
+      Top             =   4475
+      Visible         =   0   'False
+      Width           =   6060
+      _ExtentX        =   10689
+      _ExtentY        =   529
+      _Version        =   393216
+      BeginProperty Panels {8E3867A5-8586-11D1-B16A-00C0F0283628} 
+         NumPanels       =   1
+         BeginProperty Panel1 {8E3867AB-8586-11D1-B16A-00C0F0283628} 
+            AutoSize        =   1
+            Bevel           =   0
+            Object.Width           =   10636
+            Picture         =   "frmtbm.frx":08CA
+            Text            =   "update"
+            TextSave        =   "update"
+         EndProperty
+      EndProperty
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Arial"
+         Size            =   9
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin MSComctlLib.ImageList ImageList1 
+      Left            =   8400
+      Top             =   0
+      _ExtentX        =   1005
+      _ExtentY        =   1005
+      BackColor       =   -2147483643
+      ImageWidth      =   24
+      ImageHeight     =   24
+      MaskColor       =   12632256
+      _Version        =   393216
+      BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+         NumListImages   =   7
+         BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmtbm.frx":0C64
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmtbm.frx":135E
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmtbm.frx":1A58
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmtbm.frx":2152
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmtbm.frx":284C
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmtbm.frx":2F46
+            Key             =   ""
+         EndProperty
+         BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+            Picture         =   "frmtbm.frx":3640
+            Key             =   ""
+         EndProperty
+      EndProperty
+   End
+   Begin MSComctlLib.Toolbar tb 
+      Align           =   1  'Align Top
+      Height          =   450
+      Left            =   0
+      TabIndex        =   17
+      Top             =   0
+      Width           =   9060
+      _ExtentX        =   15981
+      _ExtentY        =   794
+      ButtonWidth     =   1588
+      ButtonHeight    =   794
+      Style           =   1
+      TextAlignment   =   1
+      ImageList       =   "ImageList1"
+      _Version        =   393216
+      BeginProperty Buttons {66833FE8-8583-11D1-B16A-00C0F0283628} 
+         NumButtons      =   7
+         BeginProperty Button1 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Caption         =   "Exist"
+            Key             =   "E"
+            Description     =   "Exist"
+            Object.ToolTipText     =   "Read exist properties from current file."
+            ImageIndex      =   1
+         EndProperty
+         BeginProperty Button2 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Caption         =   "Clear"
+            Key             =   "C"
+            Description     =   "Clear"
+            Object.ToolTipText     =   "Clear all input boxes."
+            ImageIndex      =   2
+         EndProperty
+         BeginProperty Button3 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Caption         =   "Spell"
+            Key             =   "S"
+            Description     =   "Check Spell"
+            Object.ToolTipText     =   "Check Spell"
+            ImageIndex      =   6
+         EndProperty
+         BeginProperty Button4 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Caption         =   "Load"
+            Key             =   "L"
+            Description     =   "Load"
+            Object.ToolTipText     =   "Load properties from other file."
+            ImageIndex      =   3
+         EndProperty
+         BeginProperty Button5 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Caption         =   "Conf"
+            Key             =   "o"
+            Description     =   "Config"
+            Object.ToolTipText     =   "Config TBM options."
+            ImageIndex      =   4
+         EndProperty
+         BeginProperty Button6 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Caption         =   "DIY"
+            Description     =   "TemEdit"
+            Object.ToolTipText     =   "Edit Templates Database"
+            ImageIndex      =   7
+         EndProperty
+         BeginProperty Button7 {66833FEA-8583-11D1-B16A-00C0F0283628} 
+            Caption         =   "Help"
+            Key             =   "H"
+            Description     =   "Help"
+            Object.ToolTipText     =   "Show help and about."
+            ImageIndex      =   5
+         EndProperty
+      EndProperty
+   End
+   Begin MSComctlLib.TreeView tv 
+      Height          =   3495
+      Left            =   240
+      TabIndex        =   14
+      Top             =   720
+      Width           =   2175
+      _ExtentX        =   3836
+      _ExtentY        =   6165
+      _Version        =   393217
+      Style           =   7
+      HotTracking     =   -1  'True
+      Scroll          =   0   'False
+      BorderStyle     =   1
+      Appearance      =   0
+   End
+   Begin VB.CommandButton CmdExit 
+      Caption         =   "E&xit"
+      Height          =   375
+      Left            =   7680
+      TabIndex        =   16
+      Top             =   4440
+      Width           =   1215
+   End
+   Begin VB.CommandButton cmdApply 
+      Caption         =   "&Apply"
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   6360
+      TabIndex        =   15
+      Top             =   4440
+      Width           =   1215
+   End
+   Begin VB.Frame Frame3 
+      Caption         =   "Document Set"
+      Height          =   1335
+      Left            =   5160
+      TabIndex        =   19
+      Top             =   2880
+      Width           =   3735
+      Begin VB.TextBox prevision 
+         Appearance      =   0  'Flat
+         Height          =   330
+         Left            =   1245
+         TabIndex        =   12
+         Top             =   360
+         Width           =   2115
+      End
+      Begin VB.TextBox Pdate 
+         Appearance      =   0  'Flat
+         Height          =   330
+         Left            =   1245
+         TabIndex        =   13
+         ToolTipText     =   "Double click here to generate current date"
+         Top             =   840
+         Width           =   2355
+      End
+      Begin MSForms.ScrollBar ScrollBar1 
+         Height          =   330
+         Left            =   3360
+         TabIndex        =   34
+         ToolTipText     =   "Increase/Decrease MX_Revision Number"
+         Top             =   360
+         Width           =   255
+         Size            =   "450;582"
+         Min             =   1
+         Max             =   100
+         Position        =   1
+         SmallChange     =   -1
+         LargeChange     =   -1
+         Orientation     =   0
+         ProportionalThumb=   0
+      End
+      Begin VB.Label lblver 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "MX_Revision"
+         ForeColor       =   &H80000008&
+         Height          =   330
+         Left            =   120
+         TabIndex        =   32
+         Top             =   360
+         Width           =   1035
+      End
+      Begin VB.Label lbldate 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "DATE"
+         ForeColor       =   &H80000008&
+         Height          =   330
+         Left            =   120
+         TabIndex        =   31
+         Top             =   840
+         Width           =   1035
+      End
+   End
+   Begin VB.Frame Frame2 
+      Caption         =   "Part Description"
+      Height          =   2175
+      Left            =   5160
+      TabIndex        =   18
+      Top             =   600
+      Width           =   3735
+      Begin MSForms.ComboBox pxdes2 
+         Height          =   330
+         Left            =   1245
+         TabIndex        =   11
+         Top             =   1680
+         Width           =   2355
+         VariousPropertyBits=   746604571
+         BorderStyle     =   1
+         DisplayStyle    =   3
+         Size            =   "4154;582"
+         MatchEntry      =   1
+         ShowDropButtonWhen=   1
+         SpecialEffect   =   0
+         FontName        =   "Arial"
+         FontHeight      =   165
+         FontCharSet     =   0
+         FontPitchAndFamily=   34
+      End
+      Begin MSForms.ComboBox pxdes1 
+         Height          =   330
+         Left            =   1245
+         TabIndex        =   10
+         Top             =   1200
+         Width           =   2355
+         VariousPropertyBits=   746604571
+         BorderStyle     =   1
+         DisplayStyle    =   3
+         Size            =   "4154;582"
+         MatchEntry      =   1
+         ShowDropButtonWhen=   1
+         SpecialEffect   =   0
+         FontName        =   "Arial"
+         FontHeight      =   165
+         FontCharSet     =   0
+         FontPitchAndFamily=   34
+      End
+      Begin MSForms.ComboBox pdes 
+         Height          =   330
+         Left            =   1245
+         TabIndex        =   9
+         Top             =   720
+         Width           =   2355
+         VariousPropertyBits=   746604571
+         BorderStyle     =   1
+         DisplayStyle    =   3
+         Size            =   "4154;582"
+         MatchEntry      =   1
+         ShowDropButtonWhen=   1
+         SpecialEffect   =   0
+         FontName        =   "Arial"
+         FontHeight      =   165
+         FontCharSet     =   0
+         FontPitchAndFamily=   34
+      End
+      Begin MSForms.ComboBox pnoun 
+         Height          =   330
+         Left            =   1245
+         TabIndex        =   8
+         Top             =   240
+         Width           =   2355
+         VariousPropertyBits=   746604571
+         BorderStyle     =   1
+         DisplayStyle    =   3
+         Size            =   "4154;582"
+         MatchEntry      =   1
+         ShowDropButtonWhen=   1
+         SpecialEffect   =   0
+         FontName        =   "Arial"
+         FontHeight      =   165
+         FontCharSet     =   0
+         FontPitchAndFamily=   34
+      End
+      Begin VB.Label lblpxdes2 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "EXT_DESP_2"
+         ForeColor       =   &H80000008&
+         Height          =   300
+         Left            =   120
+         TabIndex        =   30
+         Top             =   1680
+         Width           =   1005
+      End
+      Begin VB.Label lblpxdes1 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "EXT_DESP_1"
+         ForeColor       =   &H80000008&
+         Height          =   300
+         Left            =   120
+         TabIndex        =   29
+         Top             =   1200
+         Width           =   1005
+      End
+      Begin VB.Label lblpdes 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "DESCRIPTION"
+         ForeColor       =   &H80000008&
+         Height          =   300
+         Left            =   120
+         TabIndex        =   28
+         Top             =   720
+         Width           =   1005
+      End
+      Begin VB.Label lblpnoun 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "PART_NOUN"
+         ForeColor       =   &H80000008&
+         Height          =   300
+         Left            =   120
+         TabIndex        =   27
+         Top             =   240
+         Width           =   1005
+      End
+   End
+   Begin VB.Frame frm1 
+      Caption         =   "Tolerance Set"
+      Height          =   3615
+      Left            =   2520
+      TabIndex        =   7
+      Top             =   600
+      Width           =   2535
+      Begin VB.TextBox pxxx 
+         Appearance      =   0  'Flat
+         Height          =   330
+         Left            =   900
+         TabIndex        =   6
+         Top             =   3120
+         Width           =   1500
+      End
+      Begin VB.TextBox pxx 
+         Appearance      =   0  'Flat
+         Height          =   330
+         Left            =   900
+         TabIndex        =   5
+         Top             =   2640
+         Width           =   1500
+      End
+      Begin VB.TextBox px 
+         Appearance      =   0  'Flat
+         Height          =   330
+         Left            =   900
+         TabIndex        =   4
+         Top             =   2160
+         Width           =   1500
+      End
+      Begin VB.TextBox pholel 
+         Appearance      =   0  'Flat
+         Height          =   330
+         Left            =   900
+         TabIndex        =   3
+         Top             =   1680
+         Width           =   1500
+      End
+      Begin VB.TextBox pholeh 
+         Appearance      =   0  'Flat
+         Height          =   330
+         Left            =   900
+         TabIndex        =   2
+         Top             =   1200
+         Width           =   1500
+      End
+      Begin VB.TextBox pfinish 
+         Appearance      =   0  'Flat
+         Height          =   330
+         Left            =   900
+         TabIndex        =   1
+         Top             =   720
+         Width           =   1500
+      End
+      Begin VB.TextBox pangles 
+         Appearance      =   0  'Flat
+         Height          =   330
+         Left            =   900
+         TabIndex        =   0
+         Top             =   240
+         Width           =   1500
+      End
+      Begin VB.Label Label9 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "X,XX"
+         ForeColor       =   &H80000008&
+         Height          =   330
+         Left            =   0
+         TabIndex        =   26
+         Top             =   3120
+         Width           =   795
+      End
+      Begin VB.Label Label8 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "X,X"
+         ForeColor       =   &H80000008&
+         Height          =   330
+         Left            =   0
+         TabIndex        =   25
+         Top             =   2640
+         Width           =   795
+      End
+      Begin VB.Label Label7 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "X,"
+         ForeColor       =   &H80000008&
+         Height          =   330
+         Left            =   0
+         TabIndex        =   24
+         Top             =   2160
+         Width           =   795
+      End
+      Begin VB.Label Label4 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "HOLE-"
+         ForeColor       =   &H80000008&
+         Height          =   330
+         Left            =   0
+         TabIndex        =   23
+         Top             =   1680
+         Width           =   795
+      End
+      Begin VB.Label Label3 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "HOLE+"
+         ForeColor       =   &H80000008&
+         Height          =   330
+         Left            =   0
+         TabIndex        =   22
+         Top             =   1200
+         Width           =   795
+      End
+      Begin VB.Label Label2 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "FINISH"
+         ForeColor       =   &H80000008&
+         Height          =   330
+         Left            =   0
+         TabIndex        =   21
+         Top             =   720
+         Width           =   795
+      End
+      Begin VB.Label Label1 
+         Alignment       =   1  'Right Justify
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "ANGLES"
+         ForeColor       =   &H80000008&
+         Height          =   330
+         Left            =   0
+         TabIndex        =   20
+         Top             =   240
+         Width           =   795
+      End
+   End
+End
+Attribute VB_Name = "frmtbm"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Long, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Long) As Long
+Dim conn As New ADODB.Connection
+Dim rs As New ADODB.Recordset
+Dim oApp As Inventor.Application
+Dim oDoc As Document
+Dim oPropSets As PropertySets
+Dim oPropSet As PropertySet
+Public pip As Integer
+Public alup As Integer
+Public atm As Integer
+Public dpset As Integer
+Public apw As Integer
+Public lldp As Integer
+
+Private Sub Form_Load()                 '窗体初始化过程
+Call LoadOpition                        '读取config信息
+Call ComboBoxListInitialize             '初始化Part Items下拉式列表
+Call TreeViewInitialize                 '初始化模版树形列表
+Call LoadCurrentProperties              '读取当前文档Properties
+Call checkupdate                        '检查程序更新
+Call LoadLastDesp
+Call rScrollINI
+End Sub
+Private Sub LoadOpition()
+    Set oApp = GetObject(, "Inventor.Application")
+    On Error GoTo loaderror
+    Set oDoc = oApp.ActiveDocument
+    Set oPropSets = oDoc.PropertySets
+    Set oPropSet = oPropSets.Item("User Defined Properties")
+    On Error GoTo 0
+    Me.Caption = "TBM v" & c_ver                  '设置程序title信息
+    pip = LS("pip", 1)
+    alup = LS("alup", 1)
+    atm = LS("atm", 1)
+    dpset = LS("dpset", 1)
+    apw = LS("apw", 1)
+    lldp = LS("lldp", 1)
+Exit Sub
+loaderror:
+ MsgBox "You should open one document at least", vbCritical, "Error"
+Unload Me
+End Sub
+Private Sub dbOpen()
+Dim ConnStr As String
+On Error GoTo xlsopenerror
+'此处是数据库文件位置,可根据需要修改
+ConnStr = "Driver={Microsoft Excel Driver (*.xls)};DBQ=c:\Program Files\Autodesk\Inventor 9\addins\TBM\tbmdb.xls"
+conn.Open ConnStr
+Set rs = CreateObject("ADODB.Recordset")
+Exit Sub
+xlsopenerror:
+MsgBox "Cannot open EXCEL file C:\Program Files\Autodesk\Inventor 9\Bin\Macros\tbmdb.xls,the file is either in use or not exist, please check up.", vbCritical, "Error"
+End Sub
+Private Sub dbClose()
+On Error Resume Next
+Set rs = Nothing
+rs.Close
+Set conn = Nothing
+conn.Close
+End Sub
+
+Private Sub ComboBoxListInitialize()
+Call dbOpen                             '建立数据库连接
+Dim mySQL As String
+With rs
+mySQL = "select pnoun from [PnounList$];"
+.Open mySQL, conn, 1, 3
+For i = 1 To .RecordCount                   'Part_noun List
+pnoun.AddItem (CStr(rs("pnoun")))
+.MoveNext
+Next i
+.Close
+mySQL = "select pdes from [PdesList$];"     'Description List
+.Open mySQL, conn, 1, 3
+For i = 1 To .RecordCount
+pdes.AddItem (CStr(rs("pdes")))
+.MoveNext
+Next i
+.Close
+mySQL = "select pxdes1 from [Pxdes1List$];"    'ext1 Description List
+.Open mySQL, conn, 1, 3
+For i = 1 To .RecordCount
+pxdes1.AddItem (CStr(rs("pxdes1")))
+.MoveNext
+Next i
+.Close
+mySQL = "select pxdes2 from [Pxdes2List$];"     'ext2 Description List
+.Open mySQL, conn, 1, 3
+For i = 1 To .RecordCount
+pxdes2.AddItem (CStr(rs("pxdes2")))
+.MoveNext
+Next i
+Call dbClose                            '关闭数据库连接
+End With
+End Sub
+
+Private Sub TreeViewInitialize()
+Call dbOpen                             '建立数据库连接
+Dim mySQL As String
+With tv
+mySQL = "select name from [templates$];"
+rs.Open mySQL, conn, 1, 3
+.Nodes.Add , , "tlist", "Templates List"
+For i = 1 To rs.RecordCount             'TreeView List INI
+    Dim rsadd As String
+    rsadd = "" & rs("name")
+    .Nodes.Add "tlist", 4, rsadd, rsadd
+    rs.MoveNext
+Next i
+.Nodes("tlist").Expanded = True
+Call dbClose                            '关闭数据库连接
+End With
+End Sub
+Private Sub CmdExit_Click()
+Me.Hide
+Unload Me
+End Sub
+Private Sub CmdApply_Click()
+Call WriteProperties
+Call TbmLog
+Call DimensionPrecisionSet          '修改尺寸精度
+Call WriteToProject                 '同时写入Project属性
+Call SaveLastDesp
+Call ClearMem                       '释放变量以清空占用内存
+Me.Hide
+Unload Me
+End Sub
+Private Function oPro(pname As String)
+oPro = oPropSet.Item(pname).Value
+End Function
+Private Sub iPro(pname As String, pvalue As String)
+oPropSet.Item(pname).Value = pvalue
+End Sub
+Private Sub LoadCurrentProperties()
+On Error Resume Next
+pangles.Text = oPro("ANGLES")
+Pdate.Text = oPro("DATE")
+pdes.Text = oPro("DESCRIPTION")
+pxdes1.Text = oPro("EXT_DESCP_1")
+pxdes2.Text = oPro("EXT_DESCP_2")
+pfinish.Text = oPro("FINISH")
+pholel.Text = oPro("HOLE-")
+pholeh.Text = oPro("HOLE+")
+prevision.Text = oPro("MX_REVISION")
+pnoun.Text = oPro("PART_NOUN")
+If oPropSet.Item(1).name = ".X" Then 'distinguish Inch templates and meter templates
+    px.Text = oPro(".X")
+    pxx.Text = oPro(".XX")
+    pxxx.Text = oPro(".XXX")
+    Label7.Caption = ".X"
+    Label8.Caption = ".XX"
+    Label9.Caption = ".XXX"
+Else:
+    px.Text = oPro("X,")
+    pxx.Text = oPro("X,X")
+    pxxx.Text = oPro("X,XX")
+    Label7.Caption = "X,"
+    Label8.Caption = "X,X"
+    Label9.Caption = "X,XX"
+End If
+Call DefaultInput
+End Sub
+Private Sub DefaultInput()
+If oPro("MX_REVISION") = "" Then
+    prevision.Text = "01"
+End If
+If atm = 1 And Len(CStr(oPro("MX_REVISION"))) = 4 Then 'auto trim function 'still need improvment
+    prevision.Text = Left(oPro("MX_REVISION"), 2)
+End If
+If pnoun.Text = "Unassigned" Then
+    pnoun.Text = ""
+End If
+If Pdate.Text = "DD-MMM-YYYY" Or Pdate.Text = "" Then
+Pdate.Text = TraneDate(Now)
+End If
+End Sub
+Private Sub WriteProperties()
+On Error Resume Next
+Call iPro("ANGLES", pangles.Text)
+Call iPro("DATE", Pdate.Text)
+Call iPro("DESCRIPTION", pdes.Text)
+Call iPro("EXT_DESCP_1", pxdes1.Text)
+Call iPro("EXT_DESCP_2", pxdes2.Text)
+Call iPro("FINISH", pfinish.Text)
+Call iPro("HOLE-", pholel.Text)
+Call iPro("HOLE+", pholeh.Text)
+Call iPro("MX_REVISION", prevision.Text)
+Call iPro("PART_NOUN", pnoun.Text)
+If oPropSet.Item(1).name = ".X" Then 'distinguish Inch templates and meter templates
+    Call iPro(".X", px.Text)
+    Call iPro(".XX", pxx.Text)
+    Call iPro(".XXX", pxxx.Text)
+Else:
+    Call iPro("X,", px.Text)
+    Call iPro("X,X", pxx.Text)
+    Call iPro("X,XX", pxxx.Text)
+End If
+End Sub
+
+Private Sub pdate_DblClick()
+Pdate.Text = TraneDate(Now)
+End Sub
+Private Sub pnoun_DblClick(Cancel As MSForms.ReturnBoolean)
+pnoun.Text = Format(pnoun.Text, ">")
+End Sub
+Private Sub pdes_DblClick(Cancel As MSForms.ReturnBoolean)
+pdes.Text = Format(pdes.Text, ">")
+End Sub
+Private Sub pxdes1_DblClick(Cancel As MSForms.ReturnBoolean)
+pxdes1.Text = Format(pxdes1.Text, ">")
+End Sub
+Private Sub pxdes2_DblClick(Cancel As MSForms.ReturnBoolean)
+pxdes2.Text = Format(pxdes2.Text, ">")
+End Sub
+Private Sub prevision_DblClick()
+prevision.Text = Left(prevision.Text, 2)
+End Sub
+
+Private Function TraneMonth(n)
+Select Case Month(n)
+    Case 1
+        TraneMonth = "Jan"
+    Case 2
+        TraneMonth = "Feb"
+    Case 3
+        TraneMonth = "Mar"
+    Case 4
+        TraneMonth = "Apr"
+    Case 5
+        TraneMonth = "May"
+    Case 6
+        TraneMonth = "Jun"
+    Case 7
+        TraneMonth = "Jul"
+    Case 8
+        TraneMonth = "Aug"
+    Case 9
+        TraneMonth = "Sep"
+    Case 10
+        TraneMonth = "Oct"
+    Case 11
+        TraneMonth = "Nov"
+    Case 12
+        TraneMonth = "Dec"
+End Select
+End Function
+Public Function CharmsDate(n)
+CharmsDate = TraneDay(n) & "-" & TraneMonth(n) & "-" & Year(n)
+End Function
+Private Function TraneDate(n)
+TraneDate = TraneDay(n) & "-" & Format(TraneMonth(n), ">") & "-" & Year(n)
+End Function
+Private Function TraneDay(n)
+If Day(n) < 10 Then
+TraneDay = "0" & CStr(Day(n))
+Else:
+TraneDay = CStr(Day(n))
+End If
+End Function
+Private Function checknull(str)
+str = "" & str
+If Format(str, ">") = "NULL" Or CStr(str) = "0" Then
+checknull = ""
+Else:
+checknull = str
+End If
+End Function
+Private Sub tv_NodeClick(ByVal Node As MSComctlLib.Node)
+If Not tv.SelectedItem = "" And Not tv.SelectedItem = "Templates List" Then
+    Call dbOpen
+    Dim mySQL As String
+    mySQL = "select * from [templates$] where name='" & tv.SelectedItem & "';"
+    On Error GoTo xlserror
+    rs.Open mySQL, conn, 1, 3
+        pangles.Text = checknull(rs("pangles"))
+        pfinish.Text = checknull(rs("pfinish"))
+        pholel.Text = checknull(rs("pholel"))
+        pholeh.Text = checknull(rs("pholeh"))
+        px.Text = checknull(rs("px"))
+        pxx.Text = checknull(rs("pxx"))
+        pxxx.Text = checknull(rs("pxxx"))
+        If pip = 0 Then            'Part Items Protect
+            pnoun.Text = checknull(rs("pnoun"))
+            pdes.Text = checknull(rs("pdes"))
+            pxdes1.Text = checknull(rs("pxdes1"))
+            pxdes2.Text = checknull(rs("pxdes2"))
+        End If
+    Call dbClose
+End If
+Exit Sub
+xlserror:
+MsgBox "Template:" & rs("name") & "has wrong data format, refer to Readme sheet and correct it!", vbCritical, "Error"
+End Sub
+
+Public Sub checkupdate() '检查更新模块
+If alup = 1 Then
+Dim ConnStr As String
+On Error Resume Next
+
+ConnStr = "Driver={Microsoft Excel Driver (*.xls)};DBQ=\\shahns07\NPI_Program\Chiller_Projects\Global_Scroll_AC\Member_backup\Dominic\UpdateList.xls"
+'更新列表保存在公司服务器上,请不要修改此项
+conn.Open ConnStr
+Set rs = CreateObject("ADODB.Recordset")
+Dim mySQL As String
+mySQL = "select * from [update$];"
+rs.Open mySQL, conn, 1, 3
+If rs("n_ver") > c_ver Then
+    sb.Visible = True
+    sb.Panels.Item(1).Text = "New version:" & rs("n_ver") & " has been released on " & rs("r_date") & ", pls update!"
+    sb.Panels.Item(1).ToolTipText = "See Help for Update Detail!"
+End If
+Call dbClose                            '关闭数据库连接
+End If
+End Sub
+Private Sub DimensionPrecisionSet() '初始化图纸尺寸精度
+If dpset = 1 And oDoc.DocumentType = kDrawingDocumentObject Then
+
+    On Error Resume Next
+    Dim oDrawDoc As DrawingDocument
+    Set oDrawDoc = oApp.ActiveDocument
+    
+    Dim oStyleMgr As DrawingStylesManager
+    Set oStyleMgr = oDrawDoc.StylesManager
+    With oStyleMgr.ObjectDefaultsStyles.Item(1)
+        .LinearDimensionStyle.LinearPrecision = kOneDecimalPlaceLinearPrecision
+        '线性尺寸保留1位小数
+        .AngularDimensionStyle.AngularPrecision = kZeroDecimalPlaceAngularPrecision
+        '角度尺寸保留0位小数
+        .OrdinateSetDimensionStyle.LinearPrecision = kOneDecimalPlaceLinearPrecision
+        '座标尺寸保留1位小数
+    End With
+End If
+End Sub
+
+Public Function LS(name, default) 'Load Setting
+LS = GetSetting("Domisoft", "TBM", name, default)
+End Function
+Public Sub WS(name, Value)  'Write Setting
+SaveSetting "Domisoft", "TBM", name, Value
+End Sub
+Private Sub WriteToProject()
+If apw = 1 Then
+On Error Resume Next
+    Dim ProDes As String
+    ProDes = pnoun.Text
+    If Not pdes.Text = "" Then
+        ProDes = ProDes & "; " & pdes.Text
+    End If
+    If Not pxdes1 = "" Then
+        ProDes = ProDes & "; " & pxdes1.Text
+    End If
+    Set oPropSet = oPropSets.Item("Design Tracking Properties")
+    Call iPro("Description", ProDes)
+    Call iPro("Creation Time", Pdate.Text)
+    Set oPropSet = oPropSets.Item("Summary Information")
+    Call iPro("Revision Number", prevision.Text)
+End If
+End Sub
+Private Sub ClearMem()
+On Error Resume Next
+    Set oPropSet = Nothing
+    Set oPropSets = Nothing
+    Set oDoc = Nothing
+End Sub
+Private Sub Form_Unload(Cancel As Integer)
+Call ClearMem                           '释放变量以清空占用内存
+End Sub
+Private Sub ClearAllInputBox()
+pangles.Text = ""
+pfinish.Text = ""
+pholel.Text = ""
+pholeh.Text = ""
+px.Text = ""
+pxx.Text = ""
+pxxx.Text = ""
+pnoun.Text = ""
+pdes.Text = ""
+pxdes1.Text = ""
+pxdes2.Text = ""
+Pdate.Text = ""
+prevision.Text = ""
+End Sub
+
+Private Sub tb_ButtonClick(ByVal Button As MSComctlLib.Button)
+Select Case Button.Caption        'toolbar button events
+Case "Exist"
+    Call LoadCurrentProperties
+Case "Clear"
+    Call ClearAllInputBox
+Case "Spell"
+        frmSpellCheck.Show 1, Me
+Case "Load"
+    frmLoad.Show 1, Me
+Case "Conf"
+    tmConfig.Show 1, Me
+Case "Help"
+    frmHelp.Show 1, Me
+Case "DIY"
+    On Error Resume Next
+    Call ShellExecute(Me.hwnd, "Open", "c:\Program files\Autodesk\Inventor 9\Addins\TBM\tbmdb.xls", "", "c:\Program files\Autodesk\Inventor 9\Addins\TBM\", 1)
+    On Error GoTo 0
+End Select
+End Sub
+Private Sub LoadLastDesp()
+If lldp = 1 And pxdes2.Text = "" Then
+pxdes2.Text = LS("LastDescription", " ")
+End If
+End Sub
+Private Sub SaveLastDesp()
+Call WS("LastDescription", pxdes2.Text)
+End Sub
+Private Sub TbmLog()
+Dim ConnStr As String
+Dim c_UserName As String
+Dim c_Count As Integer
+On Error Resume Next
+Set oPropSet = oPropSets.Item("Design Tracking Properties")
+c_UserName = oPropSet.Item("Designer").Value
+c_Count = 1
+ConnStr = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\\shahns07\NPI_Program\Chiller_Projects\Global_Scroll_AC\Member_backup\Dominic\TBM\tbmlog.tbmlog"
+conn.Open ConnStr
+Set rs = CreateObject("ADODB.Recordset")
+Dim mySQL As String
+mySQL = "select * from [log] where Username='" & c_UserName & "';"
+rs.Open mySQL, conn, 1, 3
+Select Case rs.RecordCount
+Case 0
+    rs.AddNew
+    rs("Username") = c_UserName
+Case 1
+    c_Count = rs("tbmCount") + 1
+End Select
+rs("tbmCount") = c_Count
+rs("LastUse") = Now()
+rs("cc_ver") = c_ver
+rs.Update
+Call dbClose
+Set oPropSet = Nothing
+End Sub
+Private Sub ScrollBar1_Change()
+With prevision
+If IsNumeric(.Text) Then
+    If .Text > 0 And .Text <= 100 Then
+        If ScrollBar1.Value < 10 Then
+        .Text = "0" & ScrollBar1.Value
+        Else:
+        .Text = ScrollBar1.Value
+        End If
+    End If
+Else:
+    If .Text Like "[A-Z]" Or .Text Like "[a-z]" Then
+    .Text = Chr(ScrollBar1.Value)
+    End If
+End If
+End With
+End Sub
+Private Sub prevision_Change()
+With prevision
+If IsNumeric(.Text) Then
+    If .Text > 0 And .Text <= 100 Then
+        If ScrollBar1.Value < 10 Then
+        .Text = "0" & ScrollBar1.Value
+        Else:
+        .Text = ScrollBar1.Value
+        End If
+    End If
+Else:
+    If .Text Like "[A-Z]" Or .Text Like "[a-z]" Then
+    .Text = Chr(ScrollBar1.Value)
+    End If
+End If
+End With
+End Sub
+Private Sub rScrollINI()
+    With prevision                                 'MX_revision 滚动条初始化
+    If IsNumeric(.Text) Then
+    ScrollBar1.Value = .Text
+    Else:
+        If .Text Like "[A-Z]" Or .Text Like "[a-z]" Then
+        ScrollBar1.Value = Asc(UCase(.Text))
+        End If
+    End If
+    End With
+End Sub
